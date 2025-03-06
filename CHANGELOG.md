@@ -1,5 +1,23 @@
 # Changelog
 
+## v0.2.2
+
+[compare changes](https://github.com/pi0/nitro-cloudflare-dev/compare/v0.2.1...v0.2.2)
+
+### 🚀 Enhancements
+
+- Support `wrangler.json` and `wrangler.jsonc` ([#53](https://github.com/pi0/nitro-cloudflare-dev/pull/53))
+
+### 🏡 Chore
+
+- Update dependencies ([dad6f25](https://github.com/pi0/nitro-cloudflare-dev/commit/dad6f25))
+- Update ci ([cc93683](https://github.com/pi0/nitro-cloudflare-dev/commit/cc93683))
+
+### ❤️ Contributors
+
+- Teena ([@franklin-tina](https://github.com/franklin-tina))
+- Pooya Parsa ([@pi0](https://github.com/pi0))
+
 ## v0.2.1
 
 [compare changes](https://github.com/pi0/nitro-cloudflare-dev/compare/v0.2.0...v0.2.1)
