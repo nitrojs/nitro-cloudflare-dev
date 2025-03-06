@@ -36,25 +36,25 @@
     "nitro-cloudflare-dev": "workspace:*"
   },
   "dependencies": {
-    "consola": "^3.2.3",
-    "mlly": "^1.7.2",
-    "pkg-types": "^1.2.1"
+    "consola": "^3.4.0",
+    "mlly": "^1.7.4",
+    "pkg-types": "^2.1.0"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "^4.20241018.0",
-    "@types/node": "^22.7.8",
-    "changelogen": "^0.5.7",
-    "eslint": "^9.13.0",
-    "eslint-config-unjs": "^0.4.1",
-    "h3": "^1.13.0",
-    "jiti": "^2.3.3",
-    "miniflare": "^3.20241011.0",
-    "nitropack": "^2.9.7",
-    "nuxt": "^3.13.2",
-    "prettier": "^3.3.3",
-    "typescript": "^5.6.3",
-    "unbuild": "^2.0.0",
-    "wrangler": "^3.81.0"
+    "@cloudflare/workers-types": "^4.20250303.0",
+    "@types/node": "^22.13.9",
+    "changelogen": "^0.6.1",
+    "eslint": "^9.21.0",
+    "eslint-config-unjs": "^0.4.2",
+    "h3": "^1.15.1",
+    "jiti": "^2.4.2",
+    "miniflare": "^3.20250224.0",
+    "nitropack": "^2.11.2",
+    "nuxt": "^3.15.4",
+    "prettier": "^3.5.3",
+    "typescript": "^5.8.2",
+    "unbuild": "^3.5.0",
+    "wrangler": "^3.113.0"
   },
-  "packageManager": "pnpm@9.12.2"
+  "packageManager": "pnpm@10.5.2"
 }
