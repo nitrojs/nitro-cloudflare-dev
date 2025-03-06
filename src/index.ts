@@ -28,9 +28,12 @@ async function nitroModule(nitro: Nitro) {
   // Find wrangler.toml
   let configPath = nitro.options.cloudflareDev?.configPath;
   if (!configPath) {
-    configPath = await findFile("wrangler.toml", {
-      startingFrom: nitro.options.srcDir,
-    }).catch(() => undefined);
+    configPath = await findFile(
+      ["wrangler.json", "wrangler.jsonc", "wrangler.toml"],
+      {
+        startingFrom: nitro.options.srcDir,
+      },
+    ).catch(() => undefined);
   }
 
   // Resolve the persist dir
