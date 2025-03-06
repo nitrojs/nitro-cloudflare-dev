@@ -25,12 +25,15 @@ async function nitroModule(nitro: Nitro) {
     return; // Production doesn't need this
   }
 
-  // Find wrangler.toml
+  // Find wrangler.json > wrangler.jsonc > wrangler.toml
   let configPath = nitro.options.cloudflareDev?.configPath;
   if (!configPath) {
-    configPath = await findFile("wrangler.toml", {
-      startingFrom: nitro.options.srcDir,
-    }).catch(() => undefined);
+    configPath = await findFile(
+      ["wrangler.json", "wrangler.jsonc", "wrangler.toml"],
+      {
+        startingFrom: nitro.options.srcDir,
+      },
+    ).catch(() => undefined);
   }
 
   // Resolve the persist dir
@@ -60,7 +63,7 @@ async function nitroModule(nitro: Nitro) {
       [
         "🔥 Cloudflare context bindings enabled for dev server",
         "",
-        `Config path: \`${configPath ? relative(".", configPath) : colorize("yellow", "cannot find `wrangler.toml`")}\``,
+        `Config path: \`${configPath ? relative(".", configPath) : colorize("yellow", "cannot find `wrangler.json`, `wrangler.jsonc`, or `wrangler.toml`")}\``,
         `Persist dir: \`${relative(".", persistDir)}\` ${addedToGitIgnore ? colorize("green", "(added to `.gitignore`)") : ""}`,
       ].join("\n"),
     );
