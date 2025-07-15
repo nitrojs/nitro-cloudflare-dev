@@ -3,7 +3,6 @@ import { promises as fs } from "node:fs";
 import { fileURLToPath } from "mlly";
 import type { Nitro } from "nitropack";
 import type { Nuxt } from "nuxt/schema";
-import consola from "consola";
 import { colorize } from "consola/utils";
 import { findFile } from "pkg-types";
 
@@ -23,6 +22,13 @@ declare module "nitropack" {
 async function nitroModule(nitro: Nitro) {
   if (!nitro.options.dev) {
     return; // Production doesn't need this
+  }
+
+  if (nitro.options.preset === "cloudflare-dev") {
+    nitro.logger.warn(
+      "Nitro cloudflare dev emulation is enabled, you can safely remove `nitro-cloudflare-dev` from your config.",
+    );
+    return;
   }
 
   // Find wrangler.json > wrangler.jsonc > wrangler.toml
@@ -59,7 +65,7 @@ async function nitroModule(nitro: Nitro) {
   }
 
   if (!nitro.options.cloudflareDev?.silent) {
-    consola.box(
+    nitro.logger.box(
       [
         "🔥 Cloudflare context bindings enabled for dev server",
         "",
