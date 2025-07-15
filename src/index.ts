@@ -3,7 +3,6 @@ import { promises as fs } from "node:fs";
 import { fileURLToPath } from "mlly";
 import type { Nitro } from "nitropack";
 import type { Nuxt } from "nuxt/schema";
-import consola from "consola";
 import { colorize } from "consola/utils";
 import { findFile } from "pkg-types";
 
@@ -26,7 +25,7 @@ async function nitroModule(nitro: Nitro) {
   }
 
   if (nitro.options.preset === "cloudflare-dev") {
-    consola.warn(
+    nitro.logger.warn(
       "Nitro cloudflare dev emulation is enabled, you can safely remove `nitro-cloudflare-dev` from your config.",
     );
     return;
