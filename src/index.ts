@@ -27,7 +27,7 @@ async function nitroModule(nitro: Nitro) {
 
   if (nitro.options.preset === "cloudflare-dev") {
     consola.warn(
-      "Builtin `cloudflare-dev` preset is enabled, you can safely remove `nitro-cloudflare-dev` from your config.",
+      "Nitro cloudflare dev emulation is enabled, you can safely remove `nitro-cloudflare-dev` from your config.",
     );
     return;
   }
