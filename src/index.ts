@@ -65,7 +65,7 @@ async function nitroModule(nitro: Nitro) {
   }
 
   if (!nitro.options.cloudflareDev?.silent) {
-    consola.box(
+    nitro.logger.box(
       [
         "🔥 Cloudflare context bindings enabled for dev server",
         "",
