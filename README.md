@@ -3,7 +3,7 @@
 This proof of concept module enables access to the Cloudflare runtime platform in the development server of [Nitro](https://nitro.unjs.io) and [Nuxt](https://nuxt.com) using the [new `getPlatformProxy` API](https://github.com/cloudflare/workers-sdk/pull/5002) exposed by [wrangler](https://developers.cloudflare.com/workers/wrangler/) and [miniflare](https://miniflare.dev/)
 
 > [!IMPORTANT]
-> As of Nitro >= 2.12 you don't need this module anymore. Please see [Dev Preset](https://nitro.build/deploy/providers/cloudflare#dev-preset) docs for more info.
+> As of Nitro version 2.12 or later, this module is no longer required. Please refer to the [documentation](https://nitro.build/deploy/providers/cloudflare#dev-preset) for more information.
 
 ## Usage
 
