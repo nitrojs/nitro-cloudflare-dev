@@ -25,6 +25,13 @@ async function nitroModule(nitro: Nitro) {
     return; // Production doesn't need this
   }
 
+  if (nitro.options.preset === "cloudflare-dev") {
+    consola.warn(
+      "Builtin `cloudflare-dev` preset is enabled, you can safely remove `nitro-cloudflare-dev` from your config.",
+    );
+    return;
+  }
+
   // Find wrangler.json > wrangler.jsonc > wrangler.toml
   let configPath = nitro.options.cloudflareDev?.configPath;
   if (!configPath) {
