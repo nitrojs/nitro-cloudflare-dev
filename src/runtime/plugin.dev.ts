@@ -68,12 +68,16 @@ async function _getPlatformProxy() {
       configPath: string;
       persistDir: string;
       environment?: string;
+      remoteBindings?: boolean;
     };
   } = useRuntimeConfig();
 
   const proxyOptions: GetPlatformProxyOptions = {
     configPath: runtimeConfig.wrangler.configPath,
     persist: { path: runtimeConfig.wrangler.persistDir },
+    ...(runtimeConfig.wrangler.remoteBindings && {
+      experimental: { remoteBindings: true },
+    }),
   };
   // TODO: investigate why
   // https://github.com/pi0/nitro-cloudflare-dev/issues/51

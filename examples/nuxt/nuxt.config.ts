@@ -2,4 +2,9 @@
 export default defineNuxtConfig({
   modules: ["nitro-cloudflare-dev"],
   compatibilityDate: "2024-10-10",
+  // nitro: {
+  //   cloudflareDev: {
+  //     remoteBindings: true,
+  //   },
+  // }
 });

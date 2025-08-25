@@ -45,6 +45,7 @@ You can configure additional options using `cloudflareDev: { }` in `nitro.config
 - `configPath`: Sets a custom path for `wrangler.toml` file.
 - `silent`: Hide initial banner.
 - `environment`: Sets specific environment (useful for multi-environment configurations)
+- `remoteBindings`: Enable Wrangler's experimental remoteBindings.
 
 ## Development
 

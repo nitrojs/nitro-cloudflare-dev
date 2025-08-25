@@ -16,6 +16,7 @@ declare module "nitropack" {
       environment?: string;
       persistDir?: string;
       silent?: boolean;
+      remoteBindings?: boolean;
     };
   }
 }
@@ -65,7 +66,12 @@ async function nitroModule(nitro: Nitro) {
         "",
         `Config path: \`${configPath ? relative(".", configPath) : colorize("yellow", "cannot find `wrangler.json`, `wrangler.jsonc`, or `wrangler.toml`")}\``,
         `Persist dir: \`${relative(".", persistDir)}\` ${addedToGitIgnore ? colorize("green", "(added to `.gitignore`)") : ""}`,
-      ].join("\n"),
+        nitro.options.cloudflareDev?.remoteBindings
+          ? `Remote bindings: ${colorize("green", "enabled")} (🧪 experimental)`
+          : undefined,
+      ]
+        .filter((row) => row !== undefined)
+        .join("\n"),
     );
   }
 
@@ -75,6 +81,7 @@ async function nitroModule(nitro: Nitro) {
     configPath,
     persistDir,
     environment: nitro.options.cloudflareDev?.environment,
+    remoteBindings: nitro.options.cloudflareDev?.remoteBindings,
   };
 
   // Make sure runtime is transpiled
