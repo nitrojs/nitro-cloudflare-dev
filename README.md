@@ -1,3 +1,10 @@
+> [!IMPORTANT]
+> **This module is no longer required for the latest versions of Nitro.**
+> 
+> Latest versions of Nitro now include built-in support for Cloudflare development emulation. Please check [docs](https://nitro.build/deploy/providers/cloudflare#dev-preset) for more info.
+
+---
+
 # Cloudflare Platform for Nitro and Nuxt
 
 This proof of concept module enables access to the Cloudflare runtime platform in the development server of [Nitro](https://nitro.unjs.io) and [Nuxt](https://nuxt.com) using the [new `getPlatformProxy` API](https://github.com/cloudflare/workers-sdk/pull/5002) exposed by [wrangler](https://developers.cloudflare.com/workers/wrangler/) and [miniflare](https://miniflare.dev/)
