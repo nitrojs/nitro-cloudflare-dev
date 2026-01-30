@@ -1,4 +1,4 @@
-> [!WARNING]
+> [!IMPORTANT]
 > **This module is no longer required for the latest versions of Nitro.**
 > 
 > Latest versions of Nitro now include built-in support for Cloudflare development emulation. Please check [docs](https://nitro.build/deploy/providers/cloudflare#dev-preset) for more info.
